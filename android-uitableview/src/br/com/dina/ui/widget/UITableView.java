@@ -18,24 +18,21 @@ import br.com.dina.ui.model.Item;
 
 public class UITableView extends RelativeLayout {
 	
-	private int customItemBackground = 0;
-	private int customItemTextColor = 0;
-	
-	private int indexControler = 0;
+	private int mIndexController = 0;
 	private LayoutInflater mInflater;
-	private LinearLayout mainContainer;
-	private LinearLayout listContainer;
-	private List<Item> itemList;
-	private ClickListener clickListener;
+	private LinearLayout mMainContainer;
+	private LinearLayout mListContainer;
+	private List<Item> mItemList;
+	private ClickListener mClickListener;
 	
 	public UITableView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		itemList = new ArrayList<Item>();
+		mItemList = new ArrayList<Item>();
 		mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		mainContainer = (LinearLayout)  mInflater.inflate(R.layout.list_container, null);
+		mMainContainer = (LinearLayout)  mInflater.inflate(R.layout.list_container, null);
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
-		addView(mainContainer, params);				
-		listContainer = (LinearLayout) mainContainer.findViewById(R.id.buttonsContainer);		
+		addView(mMainContainer, params);				
+		mListContainer = (LinearLayout) mMainContainer.findViewById(R.id.buttonsContainer);		
 	}
 	
 	/**
@@ -44,7 +41,7 @@ public class UITableView extends RelativeLayout {
 	 * @param summary
 	 */
 	public void addItem(String title, String summary) {
-		itemList.add(new Item(title, summary));
+		mItemList.add(new Item(title, summary));
 	}
 	
 	/**
@@ -54,7 +51,7 @@ public class UITableView extends RelativeLayout {
 	 * @param summary
 	 */
 	public void addItem(int drawable, String title, String summary) {
-		itemList.add(new Item(drawable, title, summary));
+		mItemList.add(new Item(drawable, title, summary));
 	}
 	
 	/**
@@ -62,32 +59,32 @@ public class UITableView extends RelativeLayout {
 	 * @param item
 	 */
 	public void addItem(Item item) {
-		itemList.add(item);
+		mItemList.add(item);
 	}
 	
 	public void commit() {
-		indexControler = 0;
-		if(itemList.size() > 1) {
-			for(Item item : itemList) {
+		mIndexController = 0;
+		if(mItemList.size() > 1) {
+			for(Item item : mItemList) {
 				View itemView;
-				if(indexControler == 0) {
+				if(mIndexController == 0) {
 					itemView = mInflater.inflate(R.layout.list_item_top, null);
 				}
-				else if(indexControler == itemList.size()-1) {
+				else if(mIndexController == mItemList.size()-1) {
 					itemView = mInflater.inflate(R.layout.list_item_bottom, null);
 				}
 				else {
 					itemView = mInflater.inflate(R.layout.list_item_middle, null);
 				}
-				setupItem(itemView, item, indexControler);
-				listContainer.addView(itemView);
-				indexControler++;
+				setupItem(itemView, item, mIndexController);
+				mListContainer.addView(itemView);
+				mIndexController++;
 			}
 		}
-		else if(itemList.size() == 1) {
+		else if(mItemList.size() == 1) {
 			View examView = mInflater.inflate(R.layout.list_item_single, null);
-			setupItem(examView, itemList.get(0), 0);
-			listContainer.addView(examView);
+			setupItem(examView, mItemList.get(0), 0);
+			mListContainer.addView(examView);
 		}
 	}
 	
@@ -114,8 +111,8 @@ public class UITableView extends RelativeLayout {
 
 			@Override
 			public void onClick(View view) {
-				if(clickListener != null)
-					clickListener.onClick((Integer) view.getTag());
+				if(mClickListener != null)
+					mClickListener.onClick((Integer) view.getTag());
 			}
 			
 		});		
@@ -130,15 +127,15 @@ public class UITableView extends RelativeLayout {
 	 * @return
 	 */
 	public int getCount() {
-		return itemList.size();
+		return mItemList.size();
 	}
 	
 	/**
 	 * 
 	 */
 	public void clear() {
-		itemList.clear();
-		listContainer.removeAllViews();
+		mItemList.clear();
+		mListContainer.removeAllViews();
 	}
 	
 	/**
@@ -146,22 +143,14 @@ public class UITableView extends RelativeLayout {
 	 * @param listener
 	 */
 	public void setClickListener(ClickListener listener) {
-		this.clickListener = listener;
+		this.mClickListener = listener;
 	}
 	
 	/**
 	 * 
 	 */
 	public void removeClickListener() {
-		this.clickListener = null;
-	}
-	
-	public void setItemBackgroundResource(int background) {
-		this.customItemBackground = background;
-	}
-	
-	public void setItemTextColorResource(int textColor) {
-		this.customItemTextColor = textColor;
+		this.mClickListener = null;
 	}
 
 }

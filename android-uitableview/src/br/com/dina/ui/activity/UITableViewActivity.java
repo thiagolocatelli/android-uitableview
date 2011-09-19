@@ -8,19 +8,19 @@ import br.com.dina.ui.widget.UITableView;
 
 public abstract class UITableViewActivity extends Activity {
 
-	private UITableView tableView;
+	private UITableView mTableView;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
 		 super.onCreate(savedInstanceState);
 	     setContentView(R.layout.uitableview_activity);
-	     tableView = (UITableView) findViewById(R.id.tableView);
+	     mTableView = (UITableView) findViewById(R.id.tableView);
 	     populateList();
-	     tableView.commit();
+	     mTableView.commit();
 	}
 	
 	protected UITableView getUITableView() {
-		return tableView;
+		return mTableView;
 	}
 	
 	protected abstract void populateList();
