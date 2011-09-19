@@ -6,7 +6,36 @@
 
 ### UITableView
 
+
 ### UITableViewActivity
+
+In order to use the a default list you can extend the UITableViewActivity, a simple example can be found in the source code below:
+
+	public class Example extends UITableViewActivity {	
+		
+	    @Override
+	    public void onCreate(Bundle savedInstanceState) {
+	        super.onCreate(savedInstanceState);
+	        CustomClickListener listener = new CustomClickListener();
+	        getUITableView().setClickListener(listener);
+	    }
+	        
+	    private class CustomClickListener implements ClickListener {	
+			@Override
+			public void onClick(int index) {
+				Toast.makeText(Example5Activity.this, "item clicked: " + index, Toast.LENGTH_SHORT).show();
+			}	    	
+	    }
+	
+		@Override
+		protected void populateList() {
+			getUITableView().addItem("Example 1", "Summary text 1");
+			getUITableView().addItem("Example 2", "Summary text 2");
+			getUITableView().addItem("Example 3", "Summary text 3");
+			getUITableView().addItem("Example 4", "Summary text 4");
+			getUITableView().addItem("Example 5", "Summary text 5");		
+		}	    
+	}
 
 ### Customization
 UITableView is an Android Library Project and all its resources will be merged into the referring project. So, in order tu customize the colors of the UITableView and its elements, you need to create the same resources on your own project and this resources will be before the default values provided by the library project.
@@ -31,9 +60,27 @@ If you don't like the default colors that is defined in the [colors.xml](https:/
         <color name="text_color_pressed">#ffffff</color>			
     </resources> 
 
+#### Example	
+	
 ## Android applications using it	
 	
 ## Contributions
+
+Functionallity improvements and performance enhancements are always welcome. Feel free to fork and apply your changes.
+
+### TODO list
+
+* Hability to let the user define the custom layout for the item
+
+## Other Android Libraries
+
+Use these libraries also to get a better UI for your android application
+
+* [Android ActionBar](https://github.com/johannilsson/android-actionbar) by Johan Nilsson
+* [Android Pull to Refresh](https://github.com/johannilsson/android-pulltorefresh) by Johan Nilsson
+* [SwipeView](https://github.com/fry15/uk.co.jasonfry.android.tools) by Jason Fry
+
+
 
 ## License
 Copyright (c) 2010 [Thiago Locatelli] - "thiago:locatelli$gmail:com".replace(':','.').replace('$','@')
