@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:orientation="vertical"
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent">	
+   
+	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/scrollView" 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"		
+		android:background="#ffd3d3d3">
+		
+		<br.com.dina.ui.widget.UITableView android:id="@+id/tableView" style="@style/UITableView" />
+	
+	</ScrollView>
+
+</LinearLayout> 
