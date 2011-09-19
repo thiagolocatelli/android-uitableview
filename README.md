@@ -109,6 +109,6 @@ Use these libraries also to get a better UI for your android application
 
 
 ## License
-Copyright (c) 2010 [Thiago Locatelli] - "thiago:locatelli$gmail:com".replace(':','.').replace('$','@')
+Copyright (c) 2011 [Thiago Locatelli] - "thiago:locatelli$gmail:com".replace(':','.').replace('$','@')
 
 Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
