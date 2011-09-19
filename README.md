@@ -82,6 +82,7 @@ Functionallity improvements and performance enhancements are always welcome. Fee
 ### TODO list
 
 * Hability to let the user define the custom layout for the item
+* Hability to create Items that expand/collapse a set of items
 
 ## Other Android Libraries
 
