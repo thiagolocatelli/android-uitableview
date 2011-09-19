@@ -18,7 +18,7 @@
 
 ### UITableViewActivity
 
-In order to use the a default list you can extend the UITableViewActivity, a simple example can be found in the source code below:
+In order to use the a default list you can extend the [UITableViewActivity](https://github.com/thiagolocatelli/android-uitableview/blob/master/android-uitableview/src/br/com/dina/ui/activity/UITableViewActivity.java), a simple example can be found in the source code below:
 
 	public class ExampleActivity extends UITableViewActivity {	
 		
@@ -46,7 +46,7 @@ In order to use the a default list you can extend the UITableViewActivity, a sim
 		}	    
 	}
 
-In this example you dont even need to care about the xml since the UITableViewActivity is using a default layout template the only displays the list in the screen. It is pretty mych the same list you are seeing in the screenshot provided at the beginning of this explanation.
+In this example you don't even need to care about the xml since the  [UITableViewActivity](https://github.com/thiagolocatelli/android-uitableview/blob/master/android-uitableview/src/br/com/dina/ui/activity/UITableViewActivity.java) is using a default layout template the only displays the list in the screen. It is pretty mych the same list you are seeing in the screenshot provided at the beginning of this explanation.
 
 ### Customization
 UITableView is an Android Library Project and all its resources will be merged into the referring project. So, in order tu customize the colors of the UITableView and its elements, you need to create the same resources on your own project and this resources will be before the default values provided by the library project.
