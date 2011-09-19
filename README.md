@@ -72,6 +72,20 @@ If you don't like the default colors that is defined in the [colors.xml](https:/
     </resources> 
 
 #### Example	
+
+![UITableView](http://grem.io/images/uitable-view2.png "UITableView")
+
+The theme above was created using the following set of colors:
+
+	<resources>
+		<color name="rounded_container_border">#50b7babb</color>
+		<color name="base_start_color_default">#B0FFFFFF</color>
+	    <color name="base_end_color_default">#B0FFFFFF</color>
+		<color name="base_start_color_pressed">#B03590c4</color>
+	    <color name="base_end_color_pressed">#B02570ba</color>
+	    <color name="text_color_default">#000000</color>
+	    <color name="text_color_pressed">#ffffff</color>   
+	</resources>
 	
 ## Android applications using it	
 	
