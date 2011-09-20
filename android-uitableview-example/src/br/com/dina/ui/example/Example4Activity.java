@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-import br.com.dina.ui.model.Item;
+import br.com.dina.ui.model.BasicItem;
 import br.com.dina.ui.widget.UITableView;
 import br.com.dina.ui.widget.UITableView.ClickListener;
 
@@ -25,10 +25,10 @@ public class Example4Activity extends Activity {
     private void createList() {
     	CustomClickListener listener = new CustomClickListener();
     	tableView.setClickListener(listener);
-    	Item i1 = new Item("Search");
+    	BasicItem i1 = new BasicItem("Search");
     	i1.setSummary("Click here to search for friends");
     	i1.setDrawable(R.drawable.search_image);   	
-    	tableView.addItem(i1);
+    	tableView.addBasicItem(i1);
    
     }
     

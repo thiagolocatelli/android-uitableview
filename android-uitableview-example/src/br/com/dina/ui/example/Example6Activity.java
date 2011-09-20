@@ -5,7 +5,7 @@ import android.widget.Toast;
 import br.com.dina.ui.activity.UITableViewActivity;
 import br.com.dina.ui.widget.UITableView.ClickListener;
 
-public class Example5Activity extends UITableViewActivity {	
+public class Example6Activity extends UITableViewActivity {	
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class Example5Activity extends UITableViewActivity {
 
 		@Override
 		public void onClick(int index) {
-			Toast.makeText(Example5Activity.this, "item clicked: " + index, Toast.LENGTH_SHORT).show();
+			Toast.makeText(Example6Activity.this, "item clicked: " + index, Toast.LENGTH_SHORT).show();
 		}
     	
     }
@@ -28,8 +28,8 @@ public class Example5Activity extends UITableViewActivity {
 		getUITableView().addBasicItem("Example 1", "Summary text 1");
 		getUITableView().addBasicItem("Example 2", "Summary text 2");
 		getUITableView().addBasicItem("Example 3", "Summary text 3");
-		getUITableView().addBasicItem("Example 4", "Summary text 4");
-		getUITableView().addBasicItem("Example 5", "Summary text 5");		
+	
+		
 	}
     
 }

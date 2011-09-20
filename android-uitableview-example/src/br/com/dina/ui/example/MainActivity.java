@@ -25,12 +25,13 @@ public class MainActivity extends Activity {
     private void createList() {
     	CustomClickListener listener = new CustomClickListener();
     	tableView.setClickListener(listener);
-    	tableView.addItem("UITableView Example 1", "without images");
-    	tableView.addItem("UITableView Example 2", "with images");
-    	tableView.addItem("UITableView Example 3", "just a few items");
-    	tableView.addItem("UITableView Example 4", "only one item");
-    	tableView.addItem("UITableViewActivity Example 5", "a sample activity");
-    	tableView.addItem("UIButton Example 6", "some floating buttons");
+    	tableView.addBasicItem("Example 1 - UITableView", "without images");
+    	tableView.addBasicItem("Example 2 - UITableView", "with images");
+    	tableView.addBasicItem("Example 3 - UITableView", "just a few items");
+    	tableView.addBasicItem("Example 4 - UITableView", "only one item");
+    	tableView.addBasicItem("Example 5 - UITableViewActivity", "a sample activity");
+    	tableView.addBasicItem("Example 6 - UITableViewActivity temp", "item with custom view");
+    	tableView.addBasicItem("Example 7 - UIButton", "some floating buttons");
     	
     }
     
@@ -59,6 +60,15 @@ public class MainActivity extends Activity {
 				Intent i = new Intent(MainActivity.this, Example5Activity.class);
 				startActivity(i);				
 			}
+			else if(index == 5) {
+				Intent i = new Intent(MainActivity.this, Example6Activity.class);
+				startActivity(i);				
+			}
+			else if(index == 6) {
+				Intent i = new Intent(MainActivity.this, Example7Activity.class);
+				startActivity(i);				
+			}
+			
 		}
     	
     }

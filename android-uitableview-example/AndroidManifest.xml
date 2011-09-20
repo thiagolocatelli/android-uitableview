@@ -19,5 +19,7 @@
 		<activity android:name=".Example3Activity" android:label="@string/app_name"  />
 		<activity android:name=".Example4Activity" android:label="@string/app_name"  />
 		<activity android:name=".Example5Activity" android:label="@string/app_name"  />
+		<activity android:name=".Example6Activity" android:label="@string/app_name"  />
+		<activity android:name=".Example7Activity" android:label="@string/app_name"  />
     </application>
 </manifest>

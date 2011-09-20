@@ -28,16 +28,16 @@ public class Example2Activity extends Activity {
     private void createList() {
     	CustomClickListener listener = new CustomClickListener();
     	tableView.setClickListener(listener);
-    	tableView.addItem(R.drawable.user_image, "Example 1", "Summary text 1");
-    	tableView.addItem("Example 2", "Summary text 2");
-    	tableView.addItem(R.drawable.user_image, "Example 3", "Summary text 3");
-    	tableView.addItem("Example 4", "Summary text 4");
-    	tableView.addItem(R.drawable.user_image, "Example 5", "Summary text 5");
-    	tableView.addItem("Example 6", "Summary text 6");
-    	tableView.addItem(R.drawable.user_image, "Example 7", "Summary text 7");
-    	tableView.addItem("Example 8", "Summary text 8");  
-    	tableView.addItem(R.drawable.user_image, "Example 9", "Summary text 9");
-    	tableView.addItem("Example 10", "Summary text 10");
+    	tableView.addBasicItem(R.drawable.user_image, "Example 1", "Summary text 1");
+    	tableView.addBasicItem("Example 2", "Summary text 2");
+    	tableView.addBasicItem(R.drawable.user_image, "Example 3", "Summary text 3");
+    	tableView.addBasicItem("Example 4", "Summary text 4");
+    	tableView.addBasicItem(R.drawable.user_image, "Example 5", "Summary text 5");
+    	tableView.addBasicItem("Example 6", "Summary text 6");
+    	tableView.addBasicItem(R.drawable.user_image, "Example 7", "Summary text 7");
+    	tableView.addBasicItem("Example 8", "Summary text 8");  
+    	tableView.addBasicItem(R.drawable.user_image, "Example 9", "Summary text 9");
+    	tableView.addBasicItem("Example 10", "Summary text 10");
     }
     
     private class CustomClickListener implements ClickListener {
