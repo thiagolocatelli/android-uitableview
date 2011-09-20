@@ -14,7 +14,35 @@
 
 #### Working on your activity
 
-
+	public class Example1Activity extends Activity {    
+		UITableView tableView;
+		
+	    @Override
+	    public void onCreate(Bundle savedInstanceState) {
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.main);        
+	        tableView = (UITableView) findViewById(R.id.tableView);        
+	        createList();        
+	        Log.d("Example1Activity", "total items: " + tableView.getCount());        
+	        tableView.commit();
+	    }
+	    
+	    private void createList() {
+	    	CustomClickListener listener = new CustomClickListener();
+	    	tableView.setClickListener(listener);
+	    	tableView.addItem("Example 1", "Summary text 1");
+	    	tableView.addItem("Example 2", "Summary text 2");
+	    	tableView.addItem("Example 3", "Summary text 3");
+	    	tableView.addItem("Example 4", "Summary text 4");
+	    }
+	    
+	    private class CustomClickListener implements ClickListener {
+			@Override
+			public void onClick(int index) {
+				Toast.makeText(Example1Activity.this, "item clicked: " + index, Toast.LENGTH_SHORT).show();
+			}    	
+	    }    
+	}
 
 ### UITableViewActivity
 
@@ -47,6 +75,10 @@ In order to use the a default list you can extend the [UITableViewActivity](http
 	}
 
 In this example you don't even need to care about the xml since the  [UITableViewActivity](https://github.com/thiagolocatelli/android-uitableview/blob/master/android-uitableview/src/br/com/dina/ui/activity/UITableViewActivity.java) is using a default layout template the only displays the list in the screen. It is pretty mych the same list you are seeing in the screenshot provided at the beginning of this explanation.
+
+### UIButton
+
+
 
 ### Customization
 UITableView is an Android Library Project and all its resources will be merged into the referring project. So, in order tu customize the colors of the UITableView and its elements, you need to create the same resources on your own project and this resources will be before the default values provided by the library project.
