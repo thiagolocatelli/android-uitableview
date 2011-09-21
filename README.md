@@ -1,6 +1,8 @@
 # UITableView for Android
 
 ![UITableView](http://grem.io/images/uitable-view.png "UITableView")
+![UITableView](http://grem.io/images/uitable-view3.png "UITableView")
+![UITableView](http://grem.io/images/uitable-view4.png "UITableView")
 
 ## Usage
 
@@ -78,7 +80,32 @@ In this example you don't even need to care about the xml since the  [UITableVie
 
 ### UIButton
 
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"  
+		android:layout_height="fill_parent">	
+	
+			<br.com.dina.ui.widget.UIButton
+				android:layout_width="fill_parent"  
+				android:layout_height="fill_parent"
+				android:padding="10dip"
+				ui:title="some title one"/>
 
+			<br.com.dina.ui.widget.UIButton
+				android:layout_width="fill_parent"  
+				android:layout_height="fill_parent"
+				ui:title="some title two"
+				ui:subtitle="some subtitle two"
+				android:padding="10dip" />	
+				
+			<br.com.dina.ui.widget.UIButton
+				android:layout_width="fill_parent"  
+				android:layout_height="fill_parent"
+				ui:title="some title three"
+				ui:subtitle="with image"
+				ui:image="@drawable/search_image"
+				android:padding="10dip"/>    			    		
+	</LinearLayout>
 
 ### Customization
 UITableView is an Android Library Project and all its resources will be merged into the referring project. So, in order tu customize the colors of the UITableView and its elements, you need to create the same resources on your own project and this resources will be before the default values provided by the library project.
