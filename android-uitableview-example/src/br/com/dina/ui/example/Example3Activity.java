@@ -31,7 +31,7 @@ public class Example3Activity extends Activity {
     	    	
     	BasicItem i3 = new BasicItem("User Dummy 2");
     	i3.setDrawable(R.drawable.user_image); 
-    	i3.setSummary("inactive");
+    	i3.setSubtitle("inactive");
     	tableView.addBasicItem(i3);
 
     }

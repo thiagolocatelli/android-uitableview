@@ -86,6 +86,7 @@ public class UITableView extends LinearLayout {
 					tempItemView = mInflater.inflate(R.layout.list_item_middle, null);
 				}	
 				setupTemp(tempItemView, obj, mIndexController);
+				tempItemView.setClickable(obj.isClickable());
 				mListContainer.addView(tempItemView);
 				mIndexController++;
 			}
@@ -93,11 +94,8 @@ public class UITableView extends LinearLayout {
 		else if(mItemList.size() == 1) {
 			View examView = mInflater.inflate(R.layout.list_item_single, null);
 			IListItem obj = mItemList.get(0);
-			BasicItem item = null;
-			if(obj instanceof BasicItem) {
-				item = (BasicItem) obj;
-			}
-			setupBasicItem(examView, item, 0);
+			setupTemp(examView, obj, mIndexController);
+			examView.setClickable(obj.isClickable());
 			mListContainer.addView(examView);
 		}
 	}
@@ -123,15 +121,14 @@ public class UITableView extends LinearLayout {
 		if(item.getDrawable() > -1) {
 			((ImageView) view.findViewById(R.id.image)).setBackgroundResource(item.getDrawable());
 		}
-		if(item.getSummary() != null) {
-			((TextView) view.findViewById(R.id.subtitle)).setText(item.getSummary());
+		if(item.getSubtitle() != null) {
+			((TextView) view.findViewById(R.id.subtitle)).setText(item.getSubtitle());
 		}
 		else {
 			((TextView) view.findViewById(R.id.subtitle)).setVisibility(View.GONE);
 		}		
 		((TextView) view.findViewById(R.id.title)).setText(item.getTitle());
 		view.setTag(index);
-		view.setClickable(true);
 		view.setOnClickListener( new View.OnClickListener() {
 
 			@Override

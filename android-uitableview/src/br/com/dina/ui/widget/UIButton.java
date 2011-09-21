@@ -30,7 +30,6 @@ public class UIButton extends LinearLayout {
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.UIButton, 0, 0);
 		mTitle = a.getString(R.styleable.UIButton_title);
 		mSubtitle = a.getString(R.styleable.UIButton_subtitle);
-
 		mImage = a.getResourceId(R.styleable.UIButton_image, -1);
 		
 		if(mTitle != null) {
@@ -44,7 +43,6 @@ public class UIButton extends LinearLayout {
 		} else {
 			((TextView) mButtonContainer.findViewById(R.id.subtitle)).setVisibility(View.GONE);
 		}
-
 		
 		if(mImage > -1) {
 			((ImageView) mButtonContainer.findViewById(R.id.image)).setImageResource(mImage);

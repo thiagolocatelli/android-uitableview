@@ -26,7 +26,7 @@ public class Example4Activity extends Activity {
     	CustomClickListener listener = new CustomClickListener();
     	tableView.setClickListener(listener);
     	BasicItem i1 = new BasicItem("Search");
-    	i1.setSummary("Click here to search for friends");
+    	i1.setSubtitle("Click here to search for friends");
     	i1.setDrawable(R.drawable.search_image);   	
     	tableView.addBasicItem(i1);
    
