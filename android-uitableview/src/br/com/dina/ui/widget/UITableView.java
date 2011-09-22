@@ -73,7 +73,9 @@ public class UITableView extends LinearLayout {
 	
 	public void commit() {
 		mIndexController = 0;
+		
 		if(mItemList.size() > 1) {
+			//when the list has more than one item
 			for(IListItem obj : mItemList) {
 				View tempItemView;
 				if(mIndexController == 0) {
@@ -85,22 +87,23 @@ public class UITableView extends LinearLayout {
 				else {
 					tempItemView = mInflater.inflate(R.layout.list_item_middle, null);
 				}	
-				setupTemp(tempItemView, obj, mIndexController);
+				setupItem(tempItemView, obj, mIndexController);
 				tempItemView.setClickable(obj.isClickable());
 				mListContainer.addView(tempItemView);
 				mIndexController++;
 			}
 		}
 		else if(mItemList.size() == 1) {
-			View examView = mInflater.inflate(R.layout.list_item_single, null);
+			//when the list has only one item
+			View tempItemView = mInflater.inflate(R.layout.list_item_single, null);
 			IListItem obj = mItemList.get(0);
-			setupTemp(examView, obj, mIndexController);
-			examView.setClickable(obj.isClickable());
-			mListContainer.addView(examView);
+			setupItem(tempItemView, obj, mIndexController);
+			tempItemView.setClickable(obj.isClickable());
+			mListContainer.addView(tempItemView);
 		}
 	}
 	
-	private void setupTemp(View view, IListItem item, int index) {
+	private void setupItem(View view, IListItem item, int index) {
 		if(item instanceof BasicItem) {
 			BasicItem tempItem = (BasicItem) item;
 			setupBasicItem(view, tempItem, mIndexController);
@@ -129,15 +132,20 @@ public class UITableView extends LinearLayout {
 		}		
 		((TextView) view.findViewById(R.id.title)).setText(item.getTitle());
 		view.setTag(index);
-		view.setOnClickListener( new View.OnClickListener() {
-
-			@Override
-			public void onClick(View view) {
-				if(mClickListener != null)
-					mClickListener.onClick((Integer) view.getTag());
-			}
-			
-		});		
+		if(item.isClickable()) {
+			view.setOnClickListener( new View.OnClickListener() {
+	
+				@Override
+				public void onClick(View view) {
+					if(mClickListener != null)
+						mClickListener.onClick((Integer) view.getTag());
+				}
+				
+			});	
+		}
+		else {
+			((ImageView) view.findViewById(R.id.chevron)).setVisibility(View.GONE);
+		}
 	}
 	
 	/**
@@ -150,6 +158,7 @@ public class UITableView extends LinearLayout {
 		if(itemView.getView() != null) {
 			LinearLayout itemContainer = (LinearLayout) view.findViewById(R.id.itemContainer);
 			itemContainer.removeAllViews();
+			//itemContainer.removeAllViewsInLayout();
 			itemContainer.addView(itemView.getView());
 		}
 	}
