@@ -1,8 +1,8 @@
 # UITableView for Android
 
-![UITableView](http://grem.io/images/uitable-view.png "UITableView")
-![UITableView](http://grem.io/images/uitable-view3.png "UITableView")
-![UITableView](http://grem.io/images/uitable-view4.png "UITableView")
+![UITableView](http://thiago.grem.io/img/github/uitable-view.png "UITableView")
+![UITableView](http://thiago.grem.io/img/github/uitable-view3.png "UITableView")
+![UITableView](http://thiago.grem.io/img/github/uitable-view4.png "UITableView")
 
 ## Usage
 
@@ -161,9 +161,12 @@ Functionallity improvements and performance enhancements are always welcome. Fee
 
 Use these libraries also to get a better UI for your android application
 
-* [Android ActionBar](https://github.com/johannilsson/android-actionbar) by Johan Nilsson
-* [Android Pull to Refresh](https://github.com/johannilsson/android-pulltorefresh) by Johan Nilsson
-* [SwipeView](https://github.com/fry15/uk.co.jasonfry.android.tools) by Jason Fry
+* [Android ActionBar](https://github.com/johannilsson/android-actionbar) by [Johan Nilsson](https://github.com/johannilsson)
+* [Android Pull to Refresh](https://github.com/johannilsson/android-pulltorefresh) by [Johan Nilsson](https://github.com/johannilsson)
+* [SwipeView](https://github.com/fry15/uk.co.jasonfry.android.tools) by [Jason Fry](https://github.com/fry15)
+* [Facebook Integration](https://github.com/lorensiuswlt/AndroidFacebook) by [Lorensius](https://github.com/lorensiuswlt)
+* [Twitter Integration](https://github.com/lorensiuswlt/AndroidTwitter) by [Lorensius](https://github.com/lorensiuswlt)
+* [Quick Actions](https://github.com/lorensiuswlt/NewQuickAction) by [Lorensius](https://github.com/lorensiuswlt)
 
 
 
