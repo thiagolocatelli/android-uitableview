@@ -132,7 +132,7 @@ If you don't like the default colors that is defined in the [colors.xml](https:/
 
 #### Example	
 
-![UITableView](http://grem.io/images/uitable-view2.png "UITableView")
+![UITableView](http://thiago.grem.io/img/github/uitable-view2.png "UITableView")
 
 The theme above was created using the following set of colors:
 
