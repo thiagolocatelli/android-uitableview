@@ -41,8 +41,27 @@ public class UITableView extends LinearLayout {
 	 * @param title
 	 * @param summary
 	 */
+	public void addBasicItem(String title) {
+		mItemList.add(new BasicItem(title));
+	}
+	
+	/**
+	 * 
+	 * @param title
+	 * @param summary
+	 */
 	public void addBasicItem(String title, String summary) {
 		mItemList.add(new BasicItem(title, summary));
+	}
+	
+	/**
+	 * 
+	 * @param title
+	 * @param summary
+	 * @param color
+	 */
+	public void addBasicItem(String title, String summary, int color) {
+		mItemList.add(new BasicItem(title, summary, color));
 	}
 	
 	/**
@@ -53,6 +72,16 @@ public class UITableView extends LinearLayout {
 	 */
 	public void addBasicItem(int drawable, String title, String summary) {
 		mItemList.add(new BasicItem(drawable, title, summary));
+	}
+	
+	/**
+	 * 
+	 * @param drawable
+	 * @param title
+	 * @param summary
+	 */
+	public void addBasicItem(int drawable, String title, String summary, int color) {
+		mItemList.add(new BasicItem(drawable, title, summary, color));
 	}
 	
 	/**
@@ -131,6 +160,9 @@ public class UITableView extends LinearLayout {
 			((TextView) view.findViewById(R.id.subtitle)).setVisibility(View.GONE);
 		}		
 		((TextView) view.findViewById(R.id.title)).setText(item.getTitle());
+		if(item.getColor() > -1) {
+			((TextView) view.findViewById(R.id.title)).setTextColor(item.getColor());
+		}
 		view.setTag(index);
 		if(item.isClickable()) {
 			view.setOnClickListener( new View.OnClickListener() {

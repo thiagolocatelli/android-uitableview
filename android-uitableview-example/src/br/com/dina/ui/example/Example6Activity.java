@@ -32,6 +32,7 @@ public class Example6Activity extends UITableViewActivity {
 	@Override
 	protected void populateList() {
 		getUITableView().addBasicItem("Example 1", "Summary text 1");
+		getUITableView().addBasicItem("Example 1");
 		getUITableView().addBasicItem("Example 2", "Summary text 2");
 		getUITableView().addBasicItem(new BasicItem("Disabled item", "this is a disabled item", false));
 		getUITableView().addBasicItem("Example 3", "Summary text 3");
@@ -42,6 +43,11 @@ public class Example6Activity extends UITableViewActivity {
 		RelativeLayout view = (RelativeLayout) mInflater.inflate(R.layout.custom_view, null);
 		ViewItem viewItem = new ViewItem(view);
 		getUITableView().addViewItem(viewItem);
+		
+		RelativeLayout v = (RelativeLayout) mInflater.inflate(R.layout.custom_view2, null);
+		ViewItem v2 = new ViewItem(v);
+		v2.setClickable(false);
+		getUITableView().addViewItem(v2);
 		
 		
 	}

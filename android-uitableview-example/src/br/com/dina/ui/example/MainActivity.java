@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
     	tableView.addBasicItem("Example 5 - UITableViewActivity", "a sample activity");
     	tableView.addBasicItem("Example 6 - UITableViewActivity temp", "item with custom view");
     	tableView.addBasicItem("Example 7 - UIButton", "some floating buttons");
+    	tableView.addBasicItem("Example 8 - Clear List", "this button will clear the list");
     	
     }
     
@@ -67,6 +68,9 @@ public class MainActivity extends Activity {
 			else if(index == 6) {
 				Intent i = new Intent(MainActivity.this, Example7Activity.class);
 				startActivity(i);				
+			}
+			else if(index == 7) {
+				tableView.clear();		
 			}
 			
 		}

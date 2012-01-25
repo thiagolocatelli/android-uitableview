@@ -38,6 +38,7 @@ public class Example1Activity extends Activity {
     	tableView.addBasicItem("Example 8", "Summary text 8");  
     	tableView.addBasicItem("Example 9", "Summary text 9");
     	tableView.addBasicItem("Example 10", "Summary text 10");
+    	tableView.addBasicItem("Example 11");
     }
     
     private class CustomClickListener implements ClickListener {
