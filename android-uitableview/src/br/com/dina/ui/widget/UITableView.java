@@ -192,6 +192,17 @@ public class UITableView extends LinearLayout {
 			itemContainer.removeAllViews();
 			//itemContainer.removeAllViewsInLayout();
 			itemContainer.addView(itemView.getView());
+			
+			if(itemView.isClickable()) {
+		        	itemContainer.setTag(index);
+		               	itemContainer.setOnClickListener( new View.OnClickListener() {
+		                	@Override
+		                    	public void onClick(View view) {
+		                        	if(mClickListener != null)
+		                            		mClickListener.onClick((Integer) view.getTag());
+					}
+		                });
+		           }
 		}
 	}
 	
