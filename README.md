@@ -32,10 +32,10 @@
 	    private void createList() {
 	    	CustomClickListener listener = new CustomClickListener();
 	    	tableView.setClickListener(listener);
-	    	tableView.addItem("Example 1", "Summary text 1");
-	    	tableView.addItem("Example 2", "Summary text 2");
-	    	tableView.addItem("Example 3", "Summary text 3");
-	    	tableView.addItem("Example 4", "Summary text 4");
+	    	tableView.addBasicItem("Example 1", "Summary text 1");
+	    	tableView.addBasicItem("Example 2", "Summary text 2");
+	    	tableView.addBasicItem("Example 3", "Summary text 3");
+	    	tableView.addBasicItem("Example 4", "Summary text 4");
 	    }
 	    
 	    private class CustomClickListener implements ClickListener {
