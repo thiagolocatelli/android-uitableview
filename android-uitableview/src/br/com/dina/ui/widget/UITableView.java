@@ -39,7 +39,6 @@ public class UITableView extends LinearLayout {
 	/**
 	 * 
 	 * @param title
-	 * @param summary
 	 */
 	public void addBasicItem(String title) {
 		mItemList.add(new BasicItem(title));
