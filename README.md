@@ -18,7 +18,7 @@
 
 	public class Example1Activity extends Activity {    
 		UITableView tableView;
-		
+
 	    @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@
 	        Log.d("Example1Activity", "total items: " + tableView.getCount());        
 	        tableView.commit();
 	    }
-	    
+
 	    private void createList() {
 	    	CustomClickListener listener = new CustomClickListener();
 	    	tableView.setClickListener(listener);
@@ -37,7 +37,7 @@
 	    	tableView.addBasicItem("Example 3", "Summary text 3");
 	    	tableView.addBasicItem("Example 4", "Summary text 4");
 	    }
-	    
+
 	    private class CustomClickListener implements ClickListener {
 			@Override
 			public void onClick(int index) {
@@ -48,24 +48,24 @@
 
 ### UITableViewActivity
 
-In order to use the a default list you can extend the [UITableViewActivity](https://github.com/thiagolocatelli/android-uitableview/blob/master/android-uitableview/src/br/com/dina/ui/activity/UITableViewActivity.java), a simple example can be found in the source code below:
+In order to use the default list you can extend the [UITableViewActivity](https://github.com/thiagolocatelli/android-uitableview/blob/master/android-uitableview/src/br/com/dina/ui/activity/UITableViewActivity.java), a simple example can be found in the source code below:
 
 	public class ExampleActivity extends UITableViewActivity {	
-		
+
 	    @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        CustomClickListener listener = new CustomClickListener();
 	        getUITableView().setClickListener(listener);
 	    }
-	        
+
 	    private class CustomClickListener implements ClickListener {	
 			@Override
 			public void onClick(int index) {
 				Toast.makeText(ExampleActivity.this, "item clicked: " + index, Toast.LENGTH_SHORT).show();
 			}	    	
 	    }
-	
+
 		@Override
 		protected void populateList() {
 			getUITableView().addItem("Example 1", "Summary text 1");
@@ -84,7 +84,7 @@ In this example you don't even need to care about the xml since the  [UITableVie
 		android:orientation="vertical"
 		android:layout_width="fill_parent"  
 		android:layout_height="fill_parent">	
-	
+
 			<br.com.dina.ui.widget.UIButton
 				android:layout_width="fill_parent"  
 				android:layout_height="fill_parent"
@@ -97,7 +97,7 @@ In this example you don't even need to care about the xml since the  [UITableVie
 				ui:title="some title two"
 				ui:subtitle="some subtitle two"
 				android:padding="10dip" />	
-				
+
 			<br.com.dina.ui.widget.UIButton
 				android:layout_width="fill_parent"  
 				android:layout_height="fill_parent"
@@ -120,11 +120,11 @@ If you don't like the default colors that is defined in the [colors.xml](https:/
         <!-- ITEM BACKGROUND COLOR - STATE - DEFAULT -->
         <color name="base_start_color_default">#FFFFFF</color>
         <color name="base_end_color_default">#FFFFFF</color>
-    	
+
         <!-- ITEM BACKGROUND COLOR - STATE - PRESSED -->
         <color name="base_start_color_pressed">#ff3590c4</color>
         <color name="base_end_color_pressed">#ff2570ba</color>
-    
+
         <!-- ITEM TEXT COLORS - STATES - PRESSED AND DEFAULT -->
         <color name="text_color_default">#000000</color>
         <color name="text_color_pressed">#ffffff</color>			
@@ -146,9 +146,9 @@ The theme above was created using the following set of colors:
 	    <color name="text_color_default">#000000</color>
 	    <color name="text_color_pressed">#ffffff</color>   
 	</resources>
-	
+
 ## Android applications using it	
-	
+
 ## Contributions
 
 Functionallity improvements and performance enhancements are always welcome. Feel free to fork and apply your changes.
